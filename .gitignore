@@ -1,0 +1,21 @@
+# Ignore .env file
+.env
+
+# Ignore compiled binaries
+*.exe
+*.out
+*.dll
+
+# Ignore Go modules and dependencies
+/go
+/bin
+/pkg
+
+# Ignore IDE and OS-specific files
+.vscode/
+.idea/
+.DS_Store
+
+# Ignore logs and temp files
+*.log
+*.tmp
