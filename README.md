@@ -1,51 +1,63 @@
-# Book Store Management > README.md
+# BookStore API
+
+This is a simple Book Store API built with **Golang** and **GORM** for database management. It allows users to manage books with CRUD operations.
+
+## Features
+- Add, update, delete, and retrieve books
+- Uses **GORM** for database interaction
+- Secure database credentials using `.env` file
+
+## Getting Started
+
+### Prerequisites
+Ensure you have the following installed:
+- [Golang](https://go.dev/doc/install)
+- [MySQL](https://www.mysql.com/downloads/)
+- [Git](https://git-scm.com/downloads)
+
+### Clone the Repository
+```sh
+git clone https://github.com/agrawal-2005/bookStore.git
+cd bookStore
 ```
 
-### **Steps to Update and Commit `README.md`**
-1. Open `README.md` and add/update relevant project details:
-   ```md
-   # Book Store Management
+### Setup Environment Variables
+Create a `.env` file in the root directory and add your database credentials:
+```ini
+DB_USER=your_username
+DB_PASSWORD=your_password
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_NAME=bookstore
+```
 
-   This is a simple Book Store Management system built using Golang, Gorilla Mux, and GORM.
+### Install Dependencies
+```sh
+go mod tidy
+```
 
-   ## Features:
-   - Add new books
-   - Retrieve book details
-   - Update book information
-   - Delete books
+### Run the Application
+```sh
+go run cmd/main.go
+```
 
-   ## Tech Stack:
-   - Golang
-   - Gorilla Mux (for routing)
-   - GORM (for database operations)
-   - MySQL (database)
+## Database Migration
+To create and migrate tables, use:
+```sh
+go run cmd/migrate.go
+```
 
-   ## Setup Instructions:
-   1. Clone the repository:
-      ```
-      git clone https://github.com/agrawal-2005/bookStore.git
-      ```
-   2. Navigate to the project folder:
-      ```
-      cd bookStore
-      ```
-   3. Run the project:
-      ```
-      go run cmd/main.go
-      ```
-   ```
+## API Endpoints
+| Method | Endpoint      | Description              |
+|--------|--------------|--------------------------|
+| GET    | `/books`     | Get all books            |
+| GET    | `/books/:id` | Get book by ID           |
+| POST   | `/books`     | Add a new book           |
+| PUT    | `/books/:id` | Update book by ID        |
+| DELETE | `/books/:id` | Delete book by ID        |
 
-2. **Add the updated README.md to Git:**
-   ```sh
-   git add README.md
-   ```
+## Contributing
+Feel free to submit pull requests or open issues to improve this project!
 
-3. **Commit the changes:**
-   ```sh
-   git commit -m "Updated README.md with project details"
-   ```
-
-4. **Push the changes to GitHub:**
-   ```sh
-   git push origin main
-   ```
+## License
+This project is licensed under the MIT License.
