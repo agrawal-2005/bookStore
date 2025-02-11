@@ -1,5 +1,4 @@
-```sh
-echo "# Book Store Management" > README.md
+# Book Store Management > README.md
 ```
 
 ### **Steps to Update and Commit `README.md`**
